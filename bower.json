@@ -1,5 +1,5 @@
 {
-  "name": "paper-popup-menu",
+  "name": "core-popup-menu",
   "private": false,
   "dependencies": {
     "core-selector": "Polymer/core-selector#master",

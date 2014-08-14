@@ -8,24 +8,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <!--
-@group Paper Elements
-@element paper-popup-menu
+@group core Elements
+@element core-popup-menu
 -->
 
 <link href="../polymer/polymer.html" rel="import">
 <link href="../core-menu/core-menu.html" rel="import">
-<link href="../paper-shadow/paper-shadow.html" rel="import">
 
-<link href="paper-popup-menu-overlay.html" rel="import">
+<link href="core-popup-menu-overlay.html" rel="import">
 
-<polymer-element name="paper-popup-menu">
+<polymer-element name="core-popup-menu">
 <template>
 
-  <link href="paper-popup-menu.css" rel="stylesheet">
+  <link href="core-popup-menu.css" rel="stylesheet">
 
-  <paper-shadow target="{{}}" z="1"></paper-shadow>
-
-  <paper-popup-menu-overlay id="overlay" target="{{}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></paper-popup-menu-overlay>
+  <core-popup-menu-overlay id="overlay" target="{{}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></core-popup-menu-overlay>
 
   <core-menu id="menu" selected="{{selected}}" valueattr="{{valueattr}}" selectedClass="{{selectedClass}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" selectedItem="{{selectedItem}}" selectedModel="{{selectedModel}}" selectedIndex="{{selectedIndex}}" on-core-select="{{selectAction}}">
     <content></content>
