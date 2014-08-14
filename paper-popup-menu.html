@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <paper-shadow target="{{}}" z="1"></paper-shadow>
 
-  <paper-popup-menu-overlay id="overlay" target="{{}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}"></paper-popup-menu-overlay>
+  <paper-popup-menu-overlay id="overlay" target="{{}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></paper-popup-menu-overlay>
 
   <core-menu id="menu" selected="{{selected}}" valueattr="{{valueattr}}" selectedClass="{{selectedClass}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" selectedItem="{{selectedItem}}" selectedModel="{{selectedModel}}" selectedIndex="{{selectedIndex}}" on-core-select="{{selectAction}}">
     <content></content>
@@ -60,19 +60,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * The horizontal alignment of the pulldown menu relative to the button.
        *
        * @attribute halign
-       * @type 'left' | 'right'
-       * @default 'left'
+       * @type 'left' | 'right' | 'auto'
+       * @default 'auto'
        */
-      halign: { value: 'left', reflect: true },
+      halign: { value: 'auto', reflect: true },
 
       /**
        * The vertical alignment of the pulldown menu relative to the button.
        *
        * @attribute valign
-       * @type 'bottom' | 'top'
-       * @default 'top'
+       * @type 'bottom' | 'top' | 'auto'
+       * @default 'auto'
        */
-      valign: { value: 'top', reflect: true },
+      valign: { value: 'auto', reflect: true },
 
       /**
        * Gets or sets the selected element.  Default to use the index

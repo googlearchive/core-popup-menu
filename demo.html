@@ -42,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body>
 
-  <polymer-element name="menu-button" attributes="icon opened">
+  <polymer-element name="menu-button" attributes="icon opened halign valign">
   <template>
 
     <style>
@@ -53,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-icon-button id="btn" icon="{{icon}}" on-tap="{{tapAction}}"></paper-icon-button>
 
-    <paper-popup-menu id="menu" relatedTarget="{{$.btn}}" opened="{{opened}}">
+    <paper-popup-menu id="menu" relatedTarget="{{$.btn}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}">
       <content></content>
     </paper-popup-menu>
 
@@ -71,7 +71,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </script>
   </polymer-element>
 
-  <polymer-element name="drop-down" attributes="label opened selected selectedItem">
+  <polymer-element name="drop-down" attributes="label opened selected selectedItem halign valign">
   <template>
 
     <style>
@@ -84,7 +84,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <core-icon icon="{{opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
     </paper-item>
 
-    <paper-popup-menu id="menu" relatedTarget="{{$.item}}" opened="{{opened}}" selected="{{selected}}" selectedItem="{{selectedItem}}">
+    <paper-popup-menu id="menu" relatedTarget="{{$.item}}" opened="{{opened}}" selected="{{selected}}" selectedItem="{{selectedItem}}" halign="{{halign}}" valign="{{valign}}">
       <content></content>
     </paper-popup-menu>
 
@@ -113,6 +113,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .toolbar {
         background-color: #91a7ff;
         color: #fff;
+        font-size: 16px;
       }
 
       .toolbar > * {
@@ -151,9 +152,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </div>
 
-    <div flex class="middle">
+    <div flex class="middle" layout vertical>
 
-      <div layout horizontal>
+      <p>halign="auto" valign="auto":</p>
+
+      <div layout horizontal center>
 
         <drop-down label="Choose a country">
           <template repeat="{{countries}}">
@@ -172,6 +175,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <drop-down label="Your favorite pastry" selected="3">
           <template repeat="{{pastries}}">
             <paper-item label="{{}}"></paper-item>
+          </template>
+        </drop-down>
+
+      </div>
+
+      <div flex></div>
+
+      <div layout horizontal center>
+
+        <drop-down label="valign=auto">
+          <template repeat="{{countries}}">
+            <paper-item label="{{name}}"></paper-item>
+          </template>
+        </drop-down>
+
+        <div flex></div>
+
+        <drop-down label="valign=top">
+          <template repeat="{{pastries}}">
+            <paper-item label="{{}}"></paper-item>
+          </template>
+        </drop-down>
+
+        <drop-down label="valign=top" valign="top">
+          <template repeat="{{countries}}">
+            <paper-item label="{{code}}"></paper-item>
           </template>
         </drop-down>
 

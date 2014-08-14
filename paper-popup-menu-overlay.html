@@ -73,7 +73,6 @@ element, e.g. the button with a pulldown menu.
           right = window.innerWidth - ref.right;
         } else if (this.halign === 'auto') {
           if (ref.left + this.target.offsetWidth > window.innerWidth) {
-            // left = Math.max(0, window.innerWidth - this.target.offsetWidth);
             right = window.innerWidth - ref.right;
           } else {
             left = ref.left;
@@ -86,7 +85,6 @@ element, e.g. the button with a pulldown menu.
           top = ref.top;
         } else if (this.valign === 'auto') {
           if (ref.top + this.target.offsetHeight > window.innerHeight && this.target.offsetHeight < window.innerHeight) {
-            // top = Math.max(0, window.innerHeight - this.target.offsetHeight);
             bottom = window.innerHeight - ref.bottom;
           } else {
             top = ref.top;
