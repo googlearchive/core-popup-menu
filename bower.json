@@ -2,8 +2,12 @@
   "name": "core-popup-menu",
   "private": false,
   "dependencies": {
-    "core-selector": "Polymer/core-selector#master",
-    "core-collapse": "Polymer/core-collapse#master",
-    "core-item": "Polymer/core-item#master"
+  	"polymer": "Polymer/polymer#master",
+  	"core-icon": "Polymer/core-icon#master",
+  	"core-icon-button": "Polymer/core-icon-button#master",
+  	"core-icons": "Polymer/core-icons#master",
+  	"core-item": "Polymer/core-item#master",
+  	"core-menu": "Polymer/core-menu#master",
+    "core-overlay": "Polymer/core-overlay#master"
   }
 }
