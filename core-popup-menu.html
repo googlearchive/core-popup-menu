@@ -49,7 +49,7 @@ contains the selection state.
 
   <link href="core-popup-menu.css" rel="stylesheet">
 
-  <core-popup-overlay id="overlay" target="{{}}" sizingTarget="{{$.menu}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></core-popup-overlay>
+  <core-popup-overlay id="overlay" target="{{}}" sizingTarget="{{$.menu}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" transition="{{transition}}"></core-popup-overlay>
 
   <core-menu id="menu" selected="{{selected}}" valueattr="{{valueattr}}" selectedClass="{{selectedClass}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" selectedItem="{{selectedItem}}" selectedModel="{{selectedModel}}" selectedIndex="{{selectedIndex}}" on-core-select="{{selectAction}}">
     <content></content>
@@ -97,6 +97,18 @@ contains the selection state.
        * @default 'auto'
        */
       valign: { value: 'auto', reflect: true },
+
+      /**
+       * The transition property specifies a string which identifies a 
+       * <a href="../core-transition/">`core-transition`</a> element that 
+       * will be used to help the overlay open and close. The default
+       * `core-transition-fade` will cause the overlay to fade in and out.
+       *
+       * @attribute transition
+       * @type string
+       * @default 'core-transition-fade'
+       */
+      transition: null,
 
       /**
        * Gets or sets the selected element.  Default to use the index
