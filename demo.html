@@ -37,13 +37,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: 0;
     }
 
-    body /deep/ core-popup-menu {
-      background-color: #eee;
+    body /deep/ .toolbar drop-down {
+      background-color: transparent;
     }
 
     body /deep/ core-popup-menu::shadow #menu {
+      border: 1px solid #ccc;
+    }
+
+    body /deep/ :not(.toolbar) core-popup-menu::shadow #menu {
       background-color: #eee;
       border: 1px solid #ccc;
+    }
+
+    body /deep/ core-item {
+      padding: 0 12px;
+    }
+
+    body /deep/ .maxh-500 /deep/ #menu {
+      max-height: 500px !important;
     }
 
   </style>
@@ -86,10 +98,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style>
       :host {
         display: inline-block;
+        background-color: #eee;
+        margin: 0 12px;
       }
     </style>
 
     <core-item id="item" label="{{selectedItem ? selectedItem.label : label}}" on-tap="{{tapAction}}">
+      <div flex></div>
       <core-icon icon="{{opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
     </core-item>
 
@@ -129,7 +144,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 8px;
       }
 
-      .middle {
+      .middle > * {
         padding: 8px;
       }
     </style>
@@ -163,7 +178,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div flex class="middle" layout vertical>
 
-      <p>halign="auto" valign="auto":</p>
+      <div>halign="auto" valign="auto":</div>
 
       <div layout horizontal center>
 
@@ -187,6 +202,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </template>
         </drop-down>
 
+      </div>
+
+      <div layout horizontal center>
+        in flexbox:
+
+        <drop-down label="Choose a country" flex>
+          <template repeat="{{countries}}">
+            <core-item label="{{name}}"></core-item>
+          </template>
+        </drop-down>
+
+        <drop-down class="maxh-500" label="max-height: 500px" flex>
+          <template repeat="{{countries}}">
+            <core-item label="{{name}}"></core-item>
+          </template>
+        </drop-down>
       </div>
 
       <div flex></div>
