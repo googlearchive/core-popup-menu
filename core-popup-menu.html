@@ -8,21 +8,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <!--
-@group core Elements
+
+`core-popup-menu` is a popup menu that can be positioned relative to another
+element, usually the element that opens or closes the menu. It can be used
+to implement drop-downs, menu buttons, etc..
+
+Example:
+
+    <template is="auto-binding">
+        <div id="control">Your favorite pastry:</div>
+        <core-popup-menu relatedTarget="{{$.control}}" on-core-select="{{selectAction}}">
+          <core-item label="Churro"></core-item>
+          <core-item label="Donut"></core-item>
+          <core-item label="Macaron"></core-item>
+        </core-popup-menu>
+    </template>
+
+@group Polymer Core Elements
 @element core-popup-menu
+@homepage github.io
 -->
 
+<!--
+Fired when an item's selection state is changed. This event is fired both
+when an item is selected or deselected. The `isSelected` detail property
+contains the selection state.
+
+@event core-select
+@param {Object} detail
+  @param {boolean} detail.isSelected true for selection and false for de-selection
+  @param {Object} detail.item the item element
+-->
 <link href="../polymer/polymer.html" rel="import">
 <link href="../core-menu/core-menu.html" rel="import">
 
-<link href="core-popup-menu-overlay.html" rel="import">
+<link href="core-popup-overlay.html" rel="import">
 
 <polymer-element name="core-popup-menu">
 <template>
 
   <link href="core-popup-menu.css" rel="stylesheet">
 
-  <core-popup-menu-overlay id="overlay" target="{{}}" sizingTarget="{{$.menu}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></core-popup-menu-overlay>
+  <core-popup-overlay id="overlay" target="{{}}" sizingTarget="{{$.menu}}" relatedTarget="{{relatedTarget}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}"></core-popup-overlay>
 
   <core-menu id="menu" selected="{{selected}}" valueattr="{{valueattr}}" selectedClass="{{selectedClass}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" selectedItem="{{selectedItem}}" selectedModel="{{selectedModel}}" selectedIndex="{{selectedIndex}}" on-core-select="{{selectAction}}">
     <content></content>
