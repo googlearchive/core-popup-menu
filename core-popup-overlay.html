@@ -89,10 +89,11 @@ element.
           }
         }
 
-        (top !== undefined) && (this.target.style.top = top + 'px');
-        (left !== undefined) && (this.target.style.left = left + 'px');
-        (bottom !== undefined) && (this.target.style.bottom = bottom + 'px');
-        (right !== undefined) && (this.target.style.right = right + 'px');
+        var s = this.target.style;
+        s.top = (top === undefined ? 'auto' : top + 'px');
+        s.left = (left === undefined ? 'auto' : left + 'px');
+        s.bottom = (bottom === undefined ? 'auto' : bottom + 'px');
+        s.right = (right === undefined ? 'auto' : right + 'px');
       },
 
       sizeTarget: function() {
