@@ -1,3 +1,6 @@
+THIS COMPONENT IS DEPRECATED
+============================
+
 core-popup-menu
 ===============
 
