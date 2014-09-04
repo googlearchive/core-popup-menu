@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 #menu {
 	max-height: inherit;
-	overflow: scroll;
+	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	margin: 0;
 }
