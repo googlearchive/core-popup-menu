@@ -2,12 +2,12 @@
   "name": "core-popup-menu",
   "private": false,
   "dependencies": {
-  	"polymer": "Polymer/polymer#master",
-  	"core-icon": "Polymer/core-icon#master",
-  	"core-icon-button": "Polymer/core-icon-button#master",
-  	"core-icons": "Polymer/core-icons#master",
-  	"core-item": "Polymer/core-item#master",
-  	"core-menu": "Polymer/core-menu#master",
-    "core-overlay": "Polymer/core-overlay#master"
+    "polymer": "Polymer/polymer#^0.5",
+    "core-icon": "Polymer/core-icon#^0.5",
+    "core-icon-button": "Polymer/core-icon-button#^0.5",
+    "core-icons": "Polymer/core-icons#^0.5",
+    "core-item": "Polymer/core-item#^0.5",
+    "core-menu": "Polymer/core-menu#^0.5",
+    "core-overlay": "Polymer/core-overlay#^0.5"
   }
 }
