@@ -6,4 +6,4 @@ core-popup-menu
 
 owner: [@morethanreal](http://github.com/morethanreal)
 
-See the [component page](http://polymer-project.org/docs/elements/core-elements.html#core-popup-menu) for more information.
+See the [component page](https://www.polymer-project.org/0.5/docs/elements/core-popup-menu.html) for more information.
