@@ -80,9 +80,9 @@ element.
         }
 
         if (this.valign === 'top') {
-          bottom = window.innerHeight - ref.bottom;
-        } else if (this.valign === 'bottom') {
           top = ref.top;
+        } else if (this.valign === 'bottom') {
+          bottom = window.innerHeight - ref.bottom;
         } else if (this.valign === 'auto') {
           if (ref.top + this.target.offsetHeight > window.innerHeight && this.target.offsetHeight < window.innerHeight) {
             bottom = window.innerHeight - ref.bottom;
